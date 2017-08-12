@@ -23,7 +23,8 @@ function P = ComputeInitialPotentials(C)
 
 % number of cliques
 N = length(C.nodes);
-card = cell();
+%card = cell();
+card = {};
 for i = 1:length(C.factorList)
 	va = C.factorList(i).var;
 	ca = C.factorList(i).card;
@@ -46,7 +47,8 @@ for i = 1:N
 	P.cliqueList(i).val = ones(1,prod(P.cliqueList(i).card));
 end
 P.edges = C.edges; 
-clique = cell();
+%clique = cell();
+clique = {};
 clique{N}=[];
 for i = 1:length(C.factorList);
 	n = length(C.factorList(i).var);
